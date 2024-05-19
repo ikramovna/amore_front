@@ -67,7 +67,6 @@ const SuggestionsSection = () => {
       <h3 className="text-3xl md:text-5xl font-semibold mb-8">
         Wedding places
       </h3>
-
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {restaurants ? (
           <>
