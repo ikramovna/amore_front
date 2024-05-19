@@ -199,50 +199,52 @@ const SuggestionsSection = () => {
                       </div>
                     </CardContent>
                     <CardFooter className="mt-4 !pb-0 !px-0 flex flex-col">
-                      <div className="flex items-center justify-between w-full">
-                        <CardTitle className="text-current text-xl xl:text-2xl">
-                          {item.name}
-                        </CardTitle>
-                        <div className="flex items-center gap-1">
-                          <span className="text-current text-xl xl:text-2xl font-semibold">
-                            {Number(item.price) / 1_000_000} mln
-                          </span>
-                          <FaRegMoneyBill1 className="text-current text-xl xl:text-2xl font-semibold -mt-1 w-8 h-8" />
-                        </div>
-                      </div>
-                      <div className="flex flex-col w-full !h-full">
-                        <div className="">
-                          <div className="flex items-center justify-between">
-                            <CardTitle className="text-gray-900 text-base xl:text-xl font-medium !line-clamp-2">
-                              {item.address.region} {item.address.district}
-                              <br />
-                              {item.address.mahalla} {item.address.street}{" "}
-                              {item.address.house}
-                            </CardTitle>
-                            <div className="flex items-center gap-1">
-                              <span className="text-current text-xl xl:text-2xl font-semibold">
-                                {item.size_people}
-                              </span>
-                              <FaPeopleGroup className="text-current text-xl xl:text-2xl font-semibold -mt-1 w-8 h-8" />
-                            </div>
-                          </div>
-                        </div>
-                        <div className="">
-                          <div className="w-full flex flex-col xl:flex-row justify-between items-end gap-4 mt-2">
-                            <CardDescription className="text-md text-neutral-700 !line-clamp-3 w-full xl:w-3/4">
-                              {item.description}
-                            </CardDescription>
-                          </div>
-                          <Button
-                            onClick={() => openRoomIdFunc(`/room/${item.id}`)}
-                            className="w-full mt-4 h-11 bg-current hover:bg-current/80 !rounded-md"
-                          >
-                            <MdOutlineBorderColor className="mr-2 h-4 w-4" />
-                            <span>Booking</span>
-                          </Button>
-                        </div>
-                      </div>
-                    </CardFooter>
+  <div className="flex items-center justify-between w-full">
+    <CardTitle className="text-current text-xl xl:text-2xl">
+      {item.name}
+    </CardTitle>
+    <div className="flex items-center gap-1">
+      <span className="text-current text-xl xl:text-2xl font-semibold">
+        {Number(item.price) / 1_000_000} mln
+      </span>
+      <FaRegMoneyBill1 className="text-current text-xl xl:text-2xl font-semibold -mt-1 w-8 h-8" />
+    </div>
+  </div>
+  <div className="flex flex-col w-full !h-full">
+    <div className="">
+      <div className="flex items-center justify-between">
+        <CardTitle className="text-gray-900 text-base xl:text-xl font-medium !line-clamp-2">
+          {item.address.region} {item.address.district}
+          <br />
+          {item.address.mahalla} {item.address.street} {item.address.house}
+        </CardTitle>
+        <div className="flex items-center gap-1">
+          <span className="text-current text-xl xl:text-2xl font-semibold">
+            {item.size_people}
+          </span>
+          <FaPeopleGroup className="text-current text-xl xl:text-2xl font-semibold -mt-1 w-8 h-8" />
+        </div>
+      </div>
+    </div>
+    <div className="">
+      <div className="w-full flex flex-col xl:flex-row justify-between items-end gap-4 mt-2">
+        <CardDescription className="text-md text-neutral-700 !line-clamp-3 w-full xl:w-3/4">
+          {item.description.length > 33
+            ? `${item.description.substring(0, 33)}...`
+            : item.description}
+        </CardDescription>
+      </div>
+      <Button
+        onClick={() => openRoomIdFunc(`/room/${item.id}`)}
+        className="w-full mt-4 h-11 bg-current hover:bg-current/80 !rounded-md"
+      >
+        <MdOutlineBorderColor className="mr-2 h-4 w-4" />
+        <span>Booking</span>
+      </Button>
+    </div>
+  </div>
+</CardFooter>
+
                   </Card>
                 ))}
               </>
