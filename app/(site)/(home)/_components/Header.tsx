@@ -33,8 +33,12 @@ export default function Header() {
 	return (
 		<Container>
 			<nav className="flex justify-between items-center py-4 border-b-[1px] border-black">
-				<Link href={'/'} className="text-current text-3xl uppercase font-bold flex items-center">
+				<Link
+					href={'/'}
+					className="text-current text-3xl uppercase font-bold flex items-center gap-5"
+				>
 					<Image src={logo} width={50} height={50} className="object-cover" alt="Logo" />
+					Amore
 				</Link>
 
 				<div style={{ marginLeft: '50px' }}>
