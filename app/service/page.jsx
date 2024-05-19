@@ -309,5 +309,4 @@ const service = () => {
 		</div>
 	);
 };
-
 export default service;
