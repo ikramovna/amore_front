@@ -47,7 +47,9 @@ export default function Header() {
 							<a href={'#'}>Home</a>
 						</li>
 						<li style={{ marginInline: '25px' }}>
-						<a href={'/service'} onClick={()=>router.push("/service")}>Home</a>
+							<a href={'/service'} onClick={() => router.push('/service')}>
+								Service
+							</a>
 						</li>
 						<li style={{ marginInline: '25px' }}>
 							<a href={'#'}>About Us</a>
