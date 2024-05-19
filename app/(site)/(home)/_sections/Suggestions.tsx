@@ -68,7 +68,7 @@ const SuggestionsSection = () => {
         Wedding places
       </h3>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {restaurants ? (
           <>
             {restaurants.results.length ? (
@@ -79,16 +79,41 @@ const SuggestionsSection = () => {
                     className="w-full overflow-hidden p-3 shadow-none rounded-2xl border-[1px] border-gray-100"
                   >
                     <CardContent className="flex flex-col gap-3 !p-0">
-                      <div className="flex flex-col xl:flex-row gap-2">
-                        <div className="relative w-full h-[296px] xl:w-3/4">
+                      <div className="flex flex-col  gap-2">
+                        <div className="relative w-full h-[296px] ">
                           {item.images.length ? (
                             <>
-                              <CustomImage
+                              {/* <CustomImage
                                 imgUrl={item.images[0]?.image}
                                 alt="Image"
                                 className="inset-0 object-cover rounded-md"
                                 fill={true}
-                              />
+                              /> */}
+                              <Carousel
+                                swipeable={false}
+                                draggable={false}
+                                responsive={responsive}
+                                ssr={true}
+                                infinite={true}
+                                autoPlay={true}
+                                autoPlaySpeed={2000}
+                                customTransition="all .5"
+                                transitionDuration={500}
+                              >
+                                {item.images.map((imgUrl) => (
+                                  <div
+                                    key={imgUrl.id}
+                                    className="h-80 xl:h-86 !w-full relative"
+                                  >
+                                    <CustomImage
+                                      imgUrl={imgUrl.image}
+                                      alt={`Fon ${imgUrl.id}`}
+                                      fill={true}
+                                      className={`inset-0 object-cover rounded-md`}
+                                    />
+                                  </div>
+                                ))}
+                              </Carousel>
                             </>
                           ) : (
                             <CustomImage
@@ -103,7 +128,7 @@ const SuggestionsSection = () => {
                         </div>
                         <div className="flex xl:flex-col gap-2 items-stretch">
                           <div className="w-2/4 xl:w-[200px] !overflow-hidden">
-                            {item.images.length ? (
+                            {/* {item.images.length ? (
                               <Carousel
                                 swipeable={false}
                                 draggable={false}
@@ -142,10 +167,10 @@ const SuggestionsSection = () => {
                                   </div>
                                 ))}
                               </div>
-                            )}
+                            )} */}
                           </div>
                           <div className="w-2/4 xl:w-[200px] !overflow-hidden">
-                            <Carousel
+                            {/* <Carousel
                               swipeable={false}
                               draggable={false}
                               responsive={responsive}
@@ -169,7 +194,7 @@ const SuggestionsSection = () => {
                                   />
                                 </div>
                               ))}
-                            </Carousel>
+                            </Carousel> */}
                           </div>
                         </div>
                       </div>
